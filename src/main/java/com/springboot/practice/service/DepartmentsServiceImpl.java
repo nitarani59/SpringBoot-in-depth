@@ -1,7 +1,5 @@
 package com.springboot.practice.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +15,6 @@ public class DepartmentsServiceImpl implements DepartmentService{
     @Autowired
     private DepartmentRepository departmentRepository;
 
-    private Logger logger = LoggerFactory.getLogger(DepartmentsServiceImpl.class);
     @Override
     public Department createDepartment(Department department) {
         return departmentRepository.save(department);
@@ -43,5 +40,4 @@ public class DepartmentsServiceImpl implements DepartmentService{
             throw new DepartmentNotFoundException("Department with department id `" + departmentId + "` doesn't exist.");
         }
     }
-    
 }

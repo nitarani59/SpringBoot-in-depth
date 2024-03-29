@@ -13,14 +13,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @RestController
 public class DepartmentController {
    
     @Autowired
     DepartmentService departmentService;
+    
     @PostMapping("/department")
     public Department createDepartment(@RequestBody Department department) {
         return departmentService.createDepartment(department);
