@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: qa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+hello:
+  world:
+    message: "Hello World, Welcome!"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/testdb
+    username: root
+    password: root
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: qa
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: root
