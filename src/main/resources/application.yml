@@ -11,6 +11,12 @@ spring:
 hello:
   world:
     message: "Hello World, Welcome!"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "beans, env"
 
 ---
 spring:
